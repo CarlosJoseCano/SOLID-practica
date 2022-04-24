@@ -1,0 +1,11 @@
+ERRORES
+
+Los principales errores encontrados y solucionados en este ejercicio han sido:
+
+* Existencia de una interfaz demasiado grande, la cual hemos segregado para que las clases que implementan esas interfaces sòlo implementen los métodos que necesiten en funcion de la interfaz o interfaces con la que están relacionas.
+
+* Los clases subordinadas estan aplicando restricciones que no estan aplicando las clases superiores. Para ello ,con la nueva distribucion en distintas interfaces, conseguimos que se cumpla el principio de Sustitución de Liskov.
+
+* La clase File está realizando más funciones de las que debería al tener integrado metodos de conversion de documentos. Por ello, para cumplir con el Principio de Responsabilidad única, hemos separado esos métodos en dos clases que implementan una interfaz para el metodo de la conversión.
+
+
