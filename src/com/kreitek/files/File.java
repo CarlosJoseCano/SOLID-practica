@@ -1,10 +1,12 @@
 package com.kreitek.files;
 
 import com.kreitek.files.error.InvalidFileFormatException;
+import com.kreitek.interfaces.FileSystemItem;
+import com.kreitek.interfaces.FileSystemItemFile;
 
 import java.util.List;
 
-public  class File extends FileSystemItemBase implements FileSystemItem {
+public  class File extends FileSystemItemBase implements FileSystemItem, FileSystemItemFile {
 
     private int size = 0;
     private boolean isOpen = false;
@@ -24,20 +26,6 @@ public  class File extends FileSystemItemBase implements FileSystemItem {
         return extension;
     }
 
-    @Override
-    public List<FileSystemItem> listFiles() {
-        throw new UnsupportedOperationException("No es válido para ficheros");
-    }
-
-    @Override
-    public void addFile(FileSystemItem file) {
-        throw new UnsupportedOperationException("No es válido para ficheros");
-    }
-
-    @Override
-    public void removeFile(FileSystemItem file) {
-        throw new UnsupportedOperationException("No es válido para ficheros");
-    }
 
     @Override
     public int getSize() {
@@ -96,9 +84,11 @@ public  class File extends FileSystemItemBase implements FileSystemItem {
         }
         String newFileName = nameWithoutExtension + ".wav";
         FileSystemItem result = new File(parent, newFileName);
-        result.open();
+        //result.open();
+
         // Lógica de conversión de mp3 a wav. Se lee de este fichero y se escribe en result
-        result.close();
+
+        //result.close();
         return result;
     }
 
@@ -114,9 +104,11 @@ public  class File extends FileSystemItemBase implements FileSystemItem {
         }
         String newFileName = nameWithoutExtension + ".mp3";
         FileSystemItem result = new File(parent, newFileName);
-        result.open();
+        //result.open();
+
         // Lógica de conversión de wav a mp3. Se lee de este fichero y se escribe en result
-        result.close();
+
+        //result.close();
         return result;
     }
 
